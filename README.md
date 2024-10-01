@@ -81,6 +81,5 @@ This project is a **fully responsive** food delivery website designed to provide
 ## Conclusion
 
 In conclusion, i have successfully developed a responsive and user-friendly food delivery website. The website fulfills all the necessary requirements, from browsing to placing orders, and functions seamlessly across devices. It marks a significant milestone in the project , performing as expected.
-=======
-# Tasty_Bites
->>>>>>> c966eee6e1f55d6c004451e87d77849fe079ebb4
+
+
