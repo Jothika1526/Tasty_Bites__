@@ -1,0 +1,192 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("C:\Users\Jothika\Documents\Semester 2\UI\Project\upload\Group_26\Restaurant\home_images\bg.avif");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #ffa500;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.login-container h2 {
+    color: #ffa500;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.input-field:focus {
+    border-color: #ffa500;
+}
+
+.input-label {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    color: #aaa;
+    transition: all 0.2s;
+    pointer-events: none;
+    background: white;
+    padding: 0 5px;
+    font-size: 16px;
+}
+
+.input-field:focus + .input-label,
+.input-field:not(:placeholder-shown) + .input-label,
+.input-field:valid + .input-label {
+    top: -7px;
+    left: 15px;
+    color: #ffa500;
+    font-size: 12px;
+}
+
+.view-button {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #aaa;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    display: none;
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+}
+
+#login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffa500;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#login-button:hover {
+    background-color: #e69500;
+}
+
+.login-container p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.login-container a {
+    color: #ffa500;
+    text-decoration: none;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    
+    body {
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .login-container {
+        width: 80%;
+        padding: 15px;
+    }
+
+    .input-field {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .input-label {
+        font-size: 14px;
+        top: 8px;
+    }
+
+    .input-field:focus + .input-label,
+    .input-field:not(:placeholder-shown) + .input-label,
+    .input-field:valid + .input-label {
+        top: -5px;
+        font-size: 10px;
+    }
+
+    .view-button {
+        font-size: 16px;
+    }
+
+    #login-button {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        background-size: cover;
+        background-position: center;
+    }
+    .login-container {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .input-field {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .input-label {
+        font-size: 12px;
+        top: 6px;
+    }
+
+    .input-field:focus + .input-label,
+    .input-field:not(:placeholder-shown) + .input-label,
+    .input-field:valid + .input-label {
+        top: -3px;
+        font-size: 8px;
+    }
+
+    .view-button {
+        font-size: 14px;
+    }
+
+    #login-button {
+        padding: 6px;
+        font-size: 12px;
+    }
+}

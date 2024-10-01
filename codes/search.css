@@ -1,0 +1,591 @@
+body {
+    margin: 0;
+    padding-top:80px;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #ffa500;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it stays above other elements */
+    box-shadow: 0 8px 16px rgba(230, 104, 104, 0.4); /* Stronger shadow effect */
+}
+
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo {
+    flex-shrink: 0;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav .nav-links li {
+    margin-left: 20px;
+}
+
+nav .nav-links li.location-dropdown {
+    margin-left: 0;
+}
+
+.dropdown-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 10px 15px;
+    border: 2px solid #ffa500;
+    border-radius: 5px;
+    position: relative;
+    margin-right: 10px;
+}
+
+.dropdown-wrapper i {
+    color: #ffa500;
+    margin-right: 10px;
+}
+
+nav .nav-links li.location-dropdown select {
+    width: 150px;
+    height: 30px;
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+    color: #333;
+    font-weight: bold;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23ffa500" d="M0 0L2 2L4 0z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+}
+
+nav .nav-links li.location-dropdown select option {
+    background-color: white;
+    color: black;
+    padding: 10px;
+}
+
+nav .nav-links li.location-dropdown select:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+nav .nav-links li.location-dropdown select option:checked {
+    background-color: #ffa500;
+    color: white;
+}
+
+nav .nav-links li.location-dropdown select option:hover {
+    background-color: #ff7f00;
+}
+
+nav .nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+/* Active link styles */
+nav .nav-links li a.active,
+nav .nav-links li a:hover {
+    background-color: white;
+    color: #ffa500;
+    border-radius: 5px;
+}
+
+
+.nav-links li a i {
+    margin-right: 5px;
+}
+
+section.dishes {
+    padding: 20px;
+    margin-left:100px;
+}
+
+.dishes-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+.dishes-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in webkit browsers */
+}
+
+.dish {
+    flex: 0 0 auto;
+    width: 100px; /* Reduce the size of the popular dishes */
+    margin: 10px;
+    text-align: center;
+    transition: transform 0.3s, border 0.3s, box-shadow 0.3s;
+    border: 2.5px solid transparent;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+    padding: 10px; /* Add padding inside the dish box */
+    background-color: white; /* Add background color to make the shadow visible */
+    overflow: hidden; /* Ensure border-radius is visible */
+}
+
+.dish img {
+    width: 100%;
+    border-radius: 15px; /* Make the images have rounded corners */
+}
+
+.dish:hover {
+    transform: scale(1.1);
+    border-color: #ffa500;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow effect on hover */
+}
+
+.dish p {
+    color: black;
+    transition: color 0.3s;
+}
+
+.dish:hover p {
+    color: #ffa500;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#search-input {
+    width: 50%;
+    padding: 10px;
+    border: 2px solid #ffa500;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+#search-button {
+    padding: 10px;
+    border: 2px solid #ffa500;
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #ffa500;
+    color: white;
+    cursor: pointer;
+}
+
+#search-button i {
+    font-size: 1.2em;
+}
+
+#search-results-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#search-results {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+}
+
+.result-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.result-item img {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+.result-item a {
+    display: flex;
+    text-decoration: none;
+    color: #333;
+}
+
+.result-item div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the text vertically */
+    padding: 5px 0; /* Add some padding to the text container */
+}
+
+.result-item h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.result-item p {
+    margin: 5px 0 0 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.result-item:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.no-results {
+    font-size: 1.2em;
+    color: #666;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dishes {
+    padding: 20px;
+  
+}
+
+.dish {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Adjust gap between items */
+    
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+}
+
+.dish {
+    text-align: center;
+    cursor: pointer;
+    width: 70px; /* Set a fixed width for each item */
+}
+
+.dish img {
+    width: 70px; /* Reduce the size of the images */
+    height: 70px; /* Maintain aspect ratio */
+    border-radius: 50%;
+}
+
+.dish p {
+    margin-top: 5px;
+    font-size: 0.8em; /* Adjust font size */
+    color: #333;
+}
+
+#recent-searches {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+}
+
+.recent-search-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.recent-search-item a {
+    display: flex;
+    text-decoration: none;
+    color: #333;
+    flex-grow: 1;
+}
+
+.remove-search {
+    background: none;
+    border: none;
+    color: #ff0000;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.dishes h2 {
+    font-size: 1.5em; /* Adjust the size as needed */
+    color: black; /* Adjust the color as needed */
+    margin-bottom: 20px; /* Add some space below the heading */
+    text-align: center;
+}
+
+
+.dishes-container a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+#search-button:hover {
+    background-color: #e69500; /* Darker shade of orange */
+    color: white; /* Ensure the text/icon remains white */
+}
+
+
+/********************************************************************************************************/
+/* Dishes container styles for different screen sizes */
+.dishes {
+    padding: 20px;
+}
+
+/* Sidebar navigation styles */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    background-color: #ffa500; /* Match the theme color */
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar a {
+    padding: 10px ; /* Increased padding for better spacing */
+    margin-left: 0px;
+    text-decoration: none;
+    font-size: 20px; /* Reduced font size for better alignment */
+    color: #fff; /* White text color */
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.sidebar a i {
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.sidebar a:hover {
+    background-color: white; /* Slightly darker shade on hover */
+    color: #ffa500;
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px; /* Decreased font size */
+    padding: 5px; /* Adjust padding */
+    color: #fff;
+    cursor: pointer;
+}
+
+.menu-title {
+    font-size: 25px;
+    color: #fff;
+    position: absolute; /* Position it absolutely */
+    top: 20px; /* Adjust the top value to move it up */
+    margin-left:80px;
+    border-bottom: 1px solid #fff;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    font-size: 30px;
+    color: #fff;
+}
+
+nav .nav-links {
+    display: flex;
+}
+
+
+
+@media (min-width: 551px) and (max-width: 768px) {
+    .dishes {
+        margin-left: 20px;  /* Adjust margins for medium screens */
+        margin-right: 20px; /* Adjust margins for medium screens */
+    }
+    .dishes-container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Hide scrollbar in Firefox */
+        padding: 0 10px; /* Add padding for better appearance */
+    }
+
+    .dishes-container::-webkit-scrollbar {
+        display: none; /* Hide scrollbar in webkit browsers */
+    }
+
+    .dishes h2 {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+
+    nav .nav-links li {
+        display: none;
+    }
+
+    nav .nav-links .location-dropdown {
+        display: block;
+        margin: 0 auto;
+        width: 200px;
+    }
+
+    .sidebar {
+        width: 0;
+    }
+
+    .sidebar.open {
+        width: 250px;
+    }
+
+    .sidebar .location-dropdown {
+        display: none;
+    }
+
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .dishes {
+        margin-left: 20px;  /* Adjust margins for medium-large screens */
+        margin-right: 20px; /* Adjust margins for medium-large screens */
+    }
+    .dishes-container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Hide scrollbar in Firefox */
+        padding: 0 20px; /* Add padding for better appearance */
+    }
+
+    .dishes-container::-webkit-scrollbar {
+        display: none; /* Hide scrollbar in webkit browsers */
+    }
+
+    .dishes h2 {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+
+    nav .nav-links li {
+        display: none;
+    }
+
+    nav .nav-links .location-dropdown {
+        display: block;
+        margin: 0 auto;
+        width: 200px;
+    }
+
+    .sidebar {
+        width: 0;
+    }
+
+    .sidebar.open {
+        width: 250px;
+    }
+
+    .sidebar .location-dropdown {
+        display: none;
+    }
+
+}
+
+@media (min-width: 1024px) and (max-width: 1030px) {
+    .dishes {
+        margin-left: 20px;  /* Adjust margins for medium-large screens */
+        margin-right: 20px; /* Adjust margins for medium-large screens */
+    }
+    .dishes-container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Hide scrollbar in Firefox */
+        padding: 0 20px; /* Add padding for better appearance */
+    }
+
+    .dishes-container::-webkit-scrollbar {
+        display: none; /* Hide scrollbar in webkit browsers */
+    }
+
+    .dishes h2 {
+        text-align: center;
+        width: 100%;
+    }
+
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav .nav-links li {
+        display: none;
+    }
+
+    nav .nav-links .location-dropdown {
+        display: block;
+        margin: 0 auto;
+        width: 200px;
+    }
+
+    .sidebar {
+        width: 0;
+    }
+
+    .sidebar.open {
+        width: 250px;
+    }
+
+    .sidebar .location-dropdown {
+        display: none;
+    }
+
+
+   
+}
+

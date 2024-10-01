@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Order Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="search.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png.jpg"  alt="Logo">
+            </div>
+            <nav>
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li class="location-dropdown">
+                        <div class="dropdown-wrapper">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <select id="location" name="location">
+                                <option value="coimbatore">Coimbatore</option>
+                                <option value="chennai">Chennai</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="location-dropdown">
+                        <div class="dropdown-wrapper">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <select id="area" name="area">
+                                <option value="RS Puram" selected>RS Puram</option>
+                                <option value="Kalapatti">Kalapatti</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li><a href="coimbatore_RS Puram.html"  ><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="search_RS Puram.html"><i class="fas fa-search" class="active"></i> Search</a></li>
+                    <li><a href="cart_RS Puram.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+                    <li><a href="profile_RS Puram.html"><i class="fas fa-user"></i>Profile</a></li>
+                    <span></span>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div id="mySidebar" class="sidebar">
+        <span class="menu-title">Menu</span>
+        <a href="javascript:void(0)" class="closebtn" id="closeBtn">&times;</a>
+        <a href="coimbatore_RS Puram.html"><i class="fas fa-home"></i> Home</a>
+        <a href="search_RS Puram.html"><i class="fas fa-search"></i> Search</a>
+        <a href="cart_RS Puram.html"><i class="fas fa-shopping-cart"></i> Cart</a>
+        <a href="profile_RS Puram.html"><i class="fas fa-user"></i> Profile</a>
+    </div>
+
+
+    <section class="search">
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search for restaurants and food...">
+            <button id="search-button"><i class="fas fa-search"></i></button>
+        </div>
+        <div id="search-results-container">
+            <div id="search-results"></div>
+        </div>
+        
+    </section>
+    
+
+    <section class="dishes">
+        <h2>Must-Try Delicacies !</h2>
+        <div class="dishes-container">
+            <a href="../bbq nation_cbe/family_feast.html">
+                <div class="dish">
+                    <img src="../bbq nation_cbe/bbq_images/family_feast.jpg" alt="Family Feast">
+                    <p>Family Feast</p>
+                </div>
+            </a>
+
+            <a href="../bbq nation_cbe/weekday_offer.html">
+                <div class="dish">
+                    <img src="../bbq nation_cbe/bbq_images/weekday_offer.jpg" alt="Weekday Offer">
+                    <p>Weekday Offer</p>
+                </div>
+            </a>
+
+            <a href="../dahlia_che/chicken.html">
+                <div class="dish">
+                    <img src="../dahlia_che/dah_images/chicken.jpg" alt="Chicken">
+                    <p>Chicken</p>
+                </div>
+            </a>
+
+            <a href="../dahlia_che/seafood.html">
+                <div class="dish">
+                    <img src="../dahlia_che/dah_images/seafood.jpg" alt="SeaFood">
+                    <p>Sea Food</p>
+                </div>
+            </a>
+
+            <a href="../dahlia_che/veg.html">
+                <div class="dish">
+                    <img src="../dahlia_che/dah_images/veg.jpg" alt="Vegetarian">
+                    <p>Veg Combo</p>
+                </div>
+            </a>
+
+            <a href="../raintree_che/south.html">
+                <div class="dish">
+                    <img src="../Pavilion_cbe/pav_images/veg.jpg" alt="Pavilion Veg">
+                    <p>Pavillion Veg</p>
+                </div>
+            </a>
+
+            <a href="../Pavilion_cbe/delight.html">
+                <div class="dish">
+                    <img src="../Pavilion_cbe/pav_images/delight.jpg" alt="Delightful Dish">
+                    <p>Delightful Dish</p>
+                </div>
+            </a>
+
+            <a href="../south_spice_che/coastal.html">
+                <div class="dish">
+                    <img src="../south_spice_che/ss_images/coastal_detail.jpg" alt="Coastal Detail">
+                    <p>Coastal Detail</p>
+                </div>
+            </a>
+
+            <a href="../south_spice_che/sadya.html">
+                <div class="dish">
+                    <img src="../south_spice_che/ss_images/sadya.jpg" alt="Sadya">
+                    <p>Sadya</p>
+                </div>
+            </a>
+
+            <a href="../kfc/bucket_offer.html">
+                <div class="dish">
+                    <img src="../kfc/kfc_images/bucket_offer.jpg" alt="Bucket Offer">
+                    <p>Bucket Offer</p>
+                </div>
+            </a>
+        </div>
+    </section>
+    <script src="search.js"></script>
+    
+</body>
+</html>

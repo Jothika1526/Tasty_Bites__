@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png.jpg" alt="Logo">
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li class="location-dropdown">
+                        <div class="dropdown-wrapper">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <select id="location" name="location">
+                                <option value="coimbatore">Coimbatore</option>
+                                <option value="chennai">Chennai</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="location-dropdown">
+                        <div class="dropdown-wrapper">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <select id="area" name="area">
+                                <option value="RS Puram" selected>RS Puram</option>
+                                <option value="Kalapatti">Kalapatti</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li><a href="coimbatore_RS Puram.html" ><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="search.html"><i class="fas fa-search"></i> Search</a></li>
+                    <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+                    <li><a href="profile.html" class="active"><i class="fas fa-user"></i>Profile</a></li>
+                    <span></span>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+  
+
+    <div class="profile-header">
+        <h1 id="profile-greeting">Hello, User</h1>
+    </div>
+    <div class="profile-container">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#" id="past-orders" class=" sidebar-link"><i class="fas fa-shopping-bag"></i> Past Orders</a></li>
+            <li><a href="#" id="edit-profile" class="sidebar-link"><i class="fas fa-user-edit"></i> Edit Profile</a></li>
+            <li><a href="#" id="logout" class="sidebar-link"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="content">
+            <section id="past-orders-section" class="hidden">
+                <h2>Past Orders</h2>
+                <!-- Past orders will be dynamically added here -->
+            </section>
+            <section id="favourites-section" class="hidden">
+                <h2>Favourites</h2>
+                <!-- List of favourite items will be displayed here -->
+            </section>
+            <section id="edit-profile-section" class="hidden">
+                <h2>Edit Profile</h2>
+                <form id="edit-profile-form" class="profile-form">
+                    <div class="edit-profile-box">
+                    <div class="column">
+                        <div class="input-group">
+                            <label for="edit-first-name">First Name</label>
+                            <span id="display-first-name"></span>
+                            <input type="text" id="edit-first-name" class="input-field hidden" placeholder="First Name">
+                            <span class="change-button" data-target="edit-first-name">Change</span>
+                            <span class="error-message" id="edit-first-name-error"></span>
+                        </div>
+                        <div class="input-group">
+                            <label for="edit-last-name">Last Name</label>
+                            <span id="display-last-name"></span>
+                            <input type="text" id="edit-last-name" class="input-field hidden" placeholder="Last Name">
+                            <span class="change-button" data-target="edit-last-name">Change</span>
+                            <span class="error-message" id="edit-last-name-error"></span>
+                        </div>
+                        <div class="input-group">
+                            <label for="edit-phone">Phone Number</label>
+                            <span id="display-phone"></span>
+                            <input type="text" id="edit-phone" class="input-field hidden" placeholder="Phone Number">
+                            <span class="change-button" data-target="edit-phone">Change</span>
+                            <span class="error-message" id="edit-phone-error"></span>
+                        </div>
+                        <div class="input-group">
+                            <label for="edit-email">Email</label>
+                            <span id="display-email"></span>
+                            <input type="email" id="edit-email" class="input-field hidden" placeholder="Email">
+                            <span class="change-button" data-target="edit-email">Change</span>
+                            <span class="error-message" id="edit-email-error"></span>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="input-group">
+                            <label for="edit-password">Password</label>
+                            <span id="display-password">************</span>
+                            <input type="password" id="edit-password" class="input-field hidden" placeholder="Password">
+                            <span class="change-button" data-target="edit-password">Change</span>
+                            <span class="error-message" id="edit-password-error"></span>
+                        </div>
+                        <div class="input-group hidden" id="confirm-password-group">
+                            <label for="confirm-password" id="confirm-password-label" class="hidden"></label>
+                            <input type="password" id="confirm-password" class="input-field hidden" placeholder="Confirm Password">
+                            <span class="error-message" id="confirm-password-error"></span>
+                        </div>
+                        
+                    </div>
+                    <div class="column">
+                        <div class="input-group">
+                            <label for="edit-state">State</label>
+                            <span id="display-state"></span>
+                            <select id="edit-state" class="input-field hidden" disabled></select>
+                            <span class="change-button" data-target="edit-state">Change</span>
+                            <span class="error-message" id="edit-state-error"></span>
+                        </div>
+                        <div class="input-group">
+                            <label for="edit-city">City</label>
+                            <span id="display-city"></span>
+                            <select id="edit-city" class="input-field hidden" disabled></select>
+                            <span class="change-button" data-target="edit-city">Change</span>
+                            <span class="error-message" id="edit-city-error"></span>
+                        </div>
+                        <div class="input-group">
+                            <label for="edit-locality">Locality</label>
+                            <span id="display-locality"></span>
+                            <select id="edit-locality" class="input-field hidden" disabled></select>
+                            <span class="change-button" data-target="edit-locality">Change</span>
+                            <span class="error-message" id="edit-locality-error"></span>
+                        </div>
+                        <div class="input-group">
+                            <label for="edit-address">Address</label>
+                            <span id="display-address"></span>
+                            <input type="text" id="edit-address" class="input-field hidden" placeholder="Address">
+                            <span class="change-button" data-target="edit-address">Change</span>
+                            <span class="error-message" id="edit-address-error"></span>
+                        </div>
+                        <div class="input-group">
+                            <label for="edit-pincode">Pincode</label>
+                            <span id="display-pincode"></span>
+                            <input type="text" id="edit-pincode" class="input-field hidden" placeholder="Pincode">
+                            <span class="change-button" data-target="edit-pincode">Change</span>
+                            <span class="error-message" id="edit-pincode-error"></span>
+                        </div>
+                    </div>
+                </div>
+                    <div class="button-container">
+                        <button type="submit">Save Changes</button>
+                    </div>
+               
+                </form>
+            </section>
+        </main>
+    </div>
+    <div id="orderDetailsModal" class="modal">
+        <div class="modal-content">
+            <div id="orderDetailsContainer"></div>
+        </div>
+    </div>
+    <script src="profile.js"></script>
+</body>
+</html>

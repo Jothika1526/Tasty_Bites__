@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Order Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="coimbatore_RS Puram.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png.jpg"  alt="Logo">
+            </div>
+            <nav>
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li class="location-dropdown">
+                        <div class="dropdown-wrapper">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <select id="location" name="location">
+                                <option value="coimbatore">Coimbatore</option>
+                                <option value="chennai">Chennai</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="location-dropdown">
+                        <div class="dropdown-wrapper">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <select id="area" name="area">
+                                <option value="Adayar" selected>Adayar</option>
+                                <option value="Tnagar">Tnagar</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li><a href="chennai_Adayar.html" id="home-link" class="active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="search.html"><i class="fas fa-search"></i> Search</a></li>
+                    <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+                    <li><a href="profile.html"><i class="fas fa-user"></i>Profile</a></li>
+                    <span></span>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div id="mySidebar" class="sidebar">
+        <span class="menu-title">Menu</span>
+        <a href="javascript:void(0)" class="closebtn" id="closeBtn">&times;</a>
+        <a href="chennai_Adayar.html"><i class="fas fa-home"></i> Home</a>
+        <a href="search.html"><i class="fas fa-search"></i> Search</a>
+        <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a>
+        <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+    </div>
+    
+    <section class="dishes">
+        <h2>Must-Try Delicacies !</h2>
+        <div class="dishes-container">
+            <a href="../bbq nation_cbe/family_feast.html">
+                <div class="dish">
+                    <img src="../bbq nation_cbe/bbq_images/family_feast.jpg" alt="Family Feast">
+                    <p>Family Feast</p>
+                </div>
+            </a>
+
+            <a href="../bbq nation_cbe/weekday_offer.html">
+                <div class="dish">
+                    <img src="../bbq nation_cbe/bbq_images/weekday_offer.jpg" alt="Weekday Offer">
+                    <p>Weekday Offer</p>
+                </div>
+            </a>
+
+            <a href="../dahlia_che/chicken.html">
+                <div class="dish">
+                    <img src="../dahlia_che/dah_images/chicken.jpg" alt="Chicken">
+                    <p>Chicken</p>
+                </div>
+            </a>
+
+            <a href="../dahlia_che/seafood.html">
+                <div class="dish">
+                    <img src="../dahlia_che/dah_images/seafood.jpg" alt="SeaFood">
+                    <p>Sea Food</p>
+                </div>
+            </a>
+
+            <a href="../dahlia_che/veg.html">
+                <div class="dish">
+                    <img src="../dahlia_che/dah_images/veg.jpg" alt="Vegetarian">
+                    <p>Veg Combo</p>
+                </div>
+            </a>
+
+            <a href="../raintree_che/south.html">
+                <div class="dish">
+                    <img src="../Pavilion_cbe/pav_images/veg.jpg" alt="Pavilion Veg">
+                    <p>Pavillion Veg</p>
+                </div>
+            </a>
+
+            <a href="../Pavilion_cbe/delight.html">
+                <div class="dish">
+                    <img src="../Pavilion_cbe/pav_images/delight.jpg" alt="Delightful Dish">
+                    <p>Delightful Dish</p>
+                </div>
+            </a>
+
+            <a href="../south_spice_che/coastal.html">
+                <div class="dish">
+                    <img src="../south_spice_che/ss_images/coastal_detail.jpg" alt="Coastal Detail">
+                    <p>Coastal Detail</p>
+                </div>
+            </a>
+
+            <a href="../south_spice_che/sadya.html">
+                <div class="dish">
+                    <img src="../south_spice_che/ss_images/sadya.jpg" alt="Sadya">
+                    <p>Sadya</p>
+                </div>
+            </a>
+
+            <a href="../kfc/bucket_offer.html">
+                <div class="dish">
+                    <img src="../kfc/kfc_images/bucket_offer.jpg" alt="Bucket Offer">
+                    <p>Bucket Offer</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="top-restaurants">
+        <h2>Top Restaurants </h2>
+        <div class="top-restaurants-container">
+            <!-- Top restaurants will be dynamically added here -->
+        </div>
+    </section>
+    
+    <section class="restaurants">
+        <h2>Restaurants in Chennai</h2>
+        <div class="filters">
+            <button class="filter-button active" id="default" onclick="filterRestaurants('default')">Default</button>
+            <button class="filter-button" id="ratings" onclick="filterRestaurants('ratings')">Ratings 4.0+</button>
+            <button class="filter-button" id="pure-veg" onclick="filterRestaurants('pure-veg')">Pure Veg</button>
+            <button class="filter-button" id="non-veg" onclick="filterRestaurants('non-veg')">Non Veg</button>
+            <button class="filter-button" id="offers" onclick="filterRestaurants('offers')">Offers</button>
+            <button class="filter-button" id="cost-less-300" onclick="filterRestaurants('cost-less-300')">Less than Rs. 300</button>
+            <button class="filter-button" id="cuisine-italian" onclick="filterByCuisine('kids')">Kids Favourite</button>
+            <button class="filter-button" id="cuisine-south-indian" onclick="filterByCuisine('south indian')">South Indian</button>
+            <button class="filter-button" id="cuisine-chinese" onclick="filterByCuisine('chinese')">Chinese</button>
+            <div class="sort-dropdown">
+                <button class="filter-button" onclick="toggleSortDropdown()">Sort By <i class="fas fa-caret-down"></i></button>
+                <div id="sortDropdown" class="dropdown-content">
+                    <label><input type="radio" name="sort" value="default"> Relevance (Default)</label>
+                    <label><input type="radio" name="sort" value="rating"> Rating</label>
+                    <label><input type="radio" name="sort" value="cost-low-high"> Cost: Low to High</label>
+                    <label><input type="radio" name="sort" value="cost-high-low"> Cost: High to Low</label>
+                </div>
+            </div>
+        </div>
+        <div class="restaurants-container">
+            <a href="../kfc/index.html">
+                <div class="restaurant" data-delivery-time="25" data-rating="4.5" data-veg="false" data-offer="true" data-cost="300" cuisine="indian">
+                    <div class="offer-tag">Free Delivery upto Rs.300</div>
+                    <img src="./home_images/kfc.jpg" alt="KFC">
+                    <div class="restaurant-info">
+                        <div>
+                            <p class="restaurant-name">KFC</p>
+                            <p class="dish-list">Chicken,Fries,Burger</p>
+                        </div>
+                        <div class="rating-time">
+                            <div class="rating-container">
+                                <i class="fas fa-star"></i>
+                                <span class="rating">4.5</span>
+                            </div>
+                            <span class="time">25 min</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="../annapoorna_cbe/index.html">
+                <div class="restaurant" data-delivery-time="23" data-rating="4.5" data-veg="true" data-offer="false" data-cost="500" cuisine="south indian">
+           
+                    <img src="./home_images/anna.jpg"alt="Annapoorna">
+                    <div class="restaurant-info">
+                        <div>
+                            <p class="restaurant-name">Annaporna</p>
+                            <p class="dish-list">Biryani, Dosa, Thali</p>
+                        </div>
+                        <div class="rating-time">
+                            <div class="rating-container">
+                                <i class="fas fa-star"></i>
+                                <span class="rating">4.5</span>
+                            </div>
+                            <span class="time">20 min</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="../Pavilion_cbe/index.html">
+                <div class="restaurant" data-delivery-time="25" data-rating="3.0" data-veg="true" data-offer="true" data-cost="1000" cuisine="chinese">
+                    <div class="offer-tag">Free Delivery upto Rs.200</div>
+                    <img src="./home_images/pavilion.avif"alt="Pavilion">
+                    <div class="restaurant-info">
+                        <div>
+                            <p class="restaurant-name">Pavillion</p>
+                            <p class="dish-list">Full Food, Shawarma, Veg delight</p>
+                        </div>
+                        <div class="rating-time">
+                            <div class="rating-container">
+                                <i class="fas fa-star"></i>
+                                <span class="rating">3.0</span>
+                            </div>
+                            <span class="time">25 min</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="../bbq nation_cbe/index.html">
+                <div class="restaurant" data-delivery-time="15" data-rating="4.0" data-veg="false" data-offer="true" data-cost="200" cuisine="chinese">
+                    <div class="offer-tag">Free Delivery upto Rs.200</div>
+                    <img src="./home_images/bbq.avif" alt="BBQ">
+                    <div class="restaurant-info">
+                        <div>
+                            <p class="restaurant-name">BBQ Nation</p>
+                            <p class="dish-list">Chicken,Fries,Family Feast</p>
+                        </div>
+                        <div class="rating-time">
+                            <div class="rating-container">
+                                <i class="fas fa-star"></i>
+                                <span class="rating">4.0</span>
+                            </div>
+                            <span class="time">15 min</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="../Avartana_che/index.html">
+                <div class="restaurant" data-delivery-time="20" data-rating="5.0" data-veg="false" data-offer="false" data-cost="250" cuisine="chinese">
+                    <img src="./home_images/avartana.avif" alt="Avartana">
+                    <div class="restaurant-info">
+                        <div>
+                            <p class="restaurant-name">Avartana</p>
+                            <p class="dish-list">Sea Food, South Indian Food</p>
+                        </div>
+                        <div class="rating-time">
+                            <div class="rating-container">
+                                <i class="fas fa-star"></i>
+                                <span class="rating">5.0</span>
+                            </div>
+                            <span class="time">20 min</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="../raintree_che/index.html">
+                <div class="restaurant" data-delivery-time="23" data-rating="4.9" data-veg="true" data-offer="true" data-cost="1200" cuisine="kids">
+                    <div class="offer-tag">Free Delivery upto Rs.500</div>
+                    <img src="./home_images/raintree.jpg" alt="raintree">
+                    <div class="restaurant-info">
+                        <div>
+                            <p class="restaurant-name">Rain Tree</p>
+                            <p class="dish-list">North Indian, Thali</p>
+                        </div>
+                        <div class="rating-time">
+                            <div class="rating-container">
+                                <i class="fas fa-star"></i>
+                                <span class="rating">4.9</span>
+                            </div>
+                            <span class="time">23 min</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="../dahlia_che/index.html">
+                <div class="restaurant" data-delivery-time="23" data-rating="4.6" data-veg="false" data-offer="false" data-cost="1200" cuisine="kids">
+                    <img src="./home_images/dahlia.avif" alt="Dahlia">
+                    <div class="restaurant-info">
+                        <div>
+                            <p class="restaurant-name">Dahlia</p>
+                            <p class="dish-list">Chicken , Sea Food</p>
+                        </div>
+                        <div class="rating-time">
+                            <div class="rating-container">
+                                <i class="fas fa-star"></i>
+                                <span class="rating">4.6</span>
+                            </div>
+                            <span class="time">50 min</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="../south_spice_che/index.html">
+                <div class="restaurant" data-delivery-time="12" data-rating="4.9" data-veg="false" data-offer="true" data-cost="200" cuisine="chinese">
+                    <div class="offer-tag">Free Delivery upto Rs.300</div>
+                    <img src="./home_images/ss.avif" alt="South Spice">
+                    <div class="restaurant-info">
+                        <div>
+                            <p class="restaurant-name">South Spice</p>
+                            <p class="dish-list">Coastal, Sea Food, Thali</p>
+                        </div>
+                        <div class="rating-time">
+                            <div class="rating-container">
+                                <i class="fas fa-star"></i>
+                                <span class="rating">4.9</span>
+                            </div>
+                            <span class="time">12 min</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Cities We Deliver To</h3>
+                <ul>
+                    <li><a href="coimbatore_RS Puram.html">RS Puram,Coimbatore</a></li>
+                    <li><a href="coimbatore_Kalapatti.html">Kalapatti,Coimbatore</a></li>
+                    <li><a href="chennai_Adayar.html">Adayar,Chennai</a></li>
+                    <li><a href="chennai_Tnagar.html">Adayar,Chennai</a></li>
+
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="chennai_Adayar.html">Home</a></li>
+                    <li><a href="search.html">Search</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i>Nehru Food Street, MTP Road, Kavundampalayam, Coimbatore, India</p>
+                <p><i class="fas fa-envelope"></i> tastybites@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +91 9876543210</p>
+            </div>
+            <div class="footer-column">
+                <h3 class="smhead">Follow Us</h3>
+                <ul class="social-links">
+                    <li><a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="https://www.twitter.com"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="https://www.instagram.com"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Food Order Website. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="chennai_Adayar.css"></script>
+</body>
+</html>

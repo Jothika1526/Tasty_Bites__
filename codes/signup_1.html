@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="signup_1.css">
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+            <div class="input-group">
+                <input type="text" id="first-name" class="input-field" placeholder=" " required autocomplete="off">
+                <label for="first-name" class="input-label">First name</label>
+                <span class="error-message" id="first-name-error"></span>
+            </div>
+            <div class="input-group">
+                <input type="text" id="last-name" class="input-field" placeholder=" " required autocomplete="off">
+                <label for="last-name" class="input-label">Last name</label>
+                <span class="error-message" id="last-name-error"></span>
+            </div>
+            <div class="input-group phone-group">
+                <span class="phone-code">+91</span>
+                <input type="text" id="phone-number" class="input-field phone-field" placeholder=" " pattern="\d{10}" required autocomplete="off">
+                <label for="phone-number" class="input-label phone-label">Phone number</label>
+                <span class="error-message" id="phone-number-error"></span>
+            </div>
+            <div class="input-group">
+                <input type="email" id="email-id" class="input-field" placeholder=" " required autocomplete="off">
+                <label for="email-id" class="input-label">Email ID</label>
+                <span class="error-message" id="email-id-error"></span>
+            </div>
+            <div class="input-group">
+                <input type="checkbox" id="terms-checkbox" class="terms-checkbox" required autocomplete="off">
+                <label for="terms-checkbox" class="terms-label">
+                    I agree to the <a href="#" target="_blank" class="no-focus">Terms of Service</a> and <a href="#" target="_blank" class="no-focus">Privacy Policy</a>
+                </label>
+                <span class="error-message" id="terms-error"></span>
+            </div>
+            <button type="button" id="next-button">Next</button>
+        </form>
+        <div class="login-link">
+            Already have an account? <a href="#" class="no-focus">Login</a>
+        </div>
+    </div>
+    <script src="signup_1.js"></script>
+</body>
+</html>

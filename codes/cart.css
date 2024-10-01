@@ -1,0 +1,960 @@
+/* Ensure the body and overall styles */
+body {
+    margin: 0;
+    padding-top: 80px;
+    background-color: white;
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Header styles */
+header {
+    background-color: #ffa500;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it stays above other elements */
+    box-shadow: 0 8px 16px rgba(230, 104, 104, 0.4); /* Stronger shadow effect */
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo {
+    flex-shrink: 0;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav .nav-links li {
+    margin-left: 20px;
+}
+
+nav .nav-links li.location-dropdown {
+    margin-left: 0;
+}
+
+.dropdown-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 10px 15px;
+    border: 2px solid #ffa500;
+    border-radius: 5px;
+    position: relative;
+    margin-right: 10px;
+}
+
+.dropdown-wrapper i {
+    color: #ffa500;
+    margin-right: 10px;
+}
+
+nav .nav-links li.location-dropdown select {
+    width: 150px;
+    height: 30px;
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+    color: #333;
+    font-weight: bold;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23ffa500" d="M0 0L2 2L4 0z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+}
+
+nav .nav-links li.location-dropdown select option {
+    background-color: white;
+    color: black;
+    padding: 10px;
+}
+
+nav .nav-links li.location-dropdown select:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+nav .nav-links li.location-dropdown select option:checked {
+    background-color: #ffa500;
+    color: white;
+}
+
+nav .nav-links li.location-dropdown select option:hover {
+    background-color: #ff7f00;
+}
+
+nav .nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+/* Active link styles */
+nav .nav-links li a.active,
+nav .nav-links li a:hover {
+    background-color: white;
+    color: #ffa500;
+    border-radius: 5px;
+}
+
+.nav-links li a i {
+    margin-right: 5px;
+}
+
+/* Sidebar navigation styles */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    background-color: #ffa500; /* Match the theme color */
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar a {
+    padding: 10px ; /* Increased padding for better spacing */
+    margin-left: 0px;
+    text-decoration: none;
+    font-size: 20px; /* Reduced font size for better alignment */
+    color: #fff; /* White text color */
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.sidebar a i {
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.sidebar a:hover {
+    background-color: white; /* Slightly darker shade on hover */
+    color: #ffa500;
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px; /* Decreased font size */
+    padding: 5px; /* Adjust padding */
+    color: #fff;
+    cursor: pointer;
+}
+
+.menu-title {
+    font-size: 25px;
+    color: #fff;
+    position: absolute; /* Position it absolutely */
+    top: 20px; /* Adjust the top value to move it up */
+    margin-left:80px;
+    border-bottom: 1px solid #fff;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    font-size: 30px;
+    color: #fff;
+}
+
+nav .nav-links {
+    display: flex;
+}
+
+/* Responsive styles */
+@media (max-width: 550px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav .nav-links li {
+        display: none;
+    }
+
+    nav .nav-links .location-dropdown {
+        display: block;
+        margin: 0 auto;
+        width: 200px;
+    }
+
+    .sidebar {
+        width: 0;
+    }
+
+    .sidebar.open {
+        width: 250px;
+    }
+
+    .sidebar .location-dropdown {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav .nav-links li {
+        display: none;
+    }
+
+    nav .nav-links .location-dropdown {
+        display: block;
+        margin: 0 auto;
+        width: 200px;
+    }
+
+    .sidebar {
+        width: 0;
+    }
+
+    .sidebar.open {
+        width: 250px;
+    }
+
+    .sidebar .location-dropdown {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav .nav-links li {
+        display: none;
+    }
+
+    nav .nav-links .location-dropdown {
+        display: block;
+        margin: 0 auto;
+        width: 200px;
+    }
+
+    .sidebar {
+        width: 0;
+    }
+
+    .sidebar.open {
+        width: 250px;
+    }
+
+    .sidebar .location-dropdown {
+        display: none;
+    }
+}
+
+/* Cart-specific styles (existing in cart.css) */
+.cart-container {
+    display: flex;
+    padding: 20px;
+}
+
+.selected-items {
+    flex: 2;
+    padding: 20px;
+}
+
+.right-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 20px; /* Ensures spacing between columns */
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.address-container, .price-details-container {
+    padding:5px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-height: 150px;
+    width: 300px;
+}
+
+.offers-container {
+    padding: 5px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.button {
+    background-color: #ffa500;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: white;
+    font-weight: bolder;
+    color: #ffa500;
+    border: 2px solid #ffa500;
+}
+
+#address-form label, #change-address-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+#address-form input, #address-form select, #change-address-form select, #change-address-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#current-address-container p, #change-address-form p {
+    line-height: 25px;
+}
+
+.price-details-container p {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 0;
+    line-height: 30px;
+}
+
+.cart-item-box {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    width: calc(100% - 40px); /* Adjust the width of the cart item boxes */
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.cart-item-info {
+    flex: 2;
+}
+
+.cart-item-controls {
+    display: flex;
+    flex-direction: column; /* Aligns items vertically */
+    align-items: flex-end; /* Aligns items to the right */
+    gap: 10px; /* Space between elements */
+}
+
+.cart-item-total {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.cart-item img {
+    width: 100px; /* Fixed width */
+    height: 100px; /* Fixed height */
+    object-fit: cover; /* Ensures the image covers the entire area without distortion */
+    border-radius: 5px;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.quantity-controls button {
+    background-color: #ffa500;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantity-controls button:hover {
+    background-color: white;
+    font-weight: bolder;
+    color: #ffa500;
+    border: 2px solid #ffa500;
+}
+
+.quantity-controls input {
+    width: 20px;
+    height: 22px;
+    text-align: center;
+    color: white;
+    background-color: #ffa500;
+    border: 1px solid #ffa500;
+    border-radius: 3px;
+}
+
+#error-message, #cart-error-message {
+    color: red;
+    display: none;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Add these styles to cart.css */
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-field, .select-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.input-field:focus, .select-field:focus {
+    border-color: #ffa500;
+}
+
+.input-label {
+    position: absolute;
+    top: -2px;
+    left: 15px;
+    color: #aaa;
+    transition: all 0.2s;
+    pointer-events: none;
+    background: white;
+    padding: 0 5px;
+    font-size: 16px;
+}
+
+.select-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #aaa;
+    text-align: left;
+}
+
+.input-field:focus + .input-label,
+.input-field:not(:placeholder-shown) + .input-label,
+.input-field:valid + .input-label,
+.select-field:focus + .input-label,
+.select-field:not([value=""]) + .input-label,
+.select-field:valid + .input-label {
+    top: -15px;
+    left: 15px;
+    color: #ffa500;
+    font-size: 12px;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    display: none;
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+}
+
+#apply-changes {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffa500;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#apply-changes:hover {
+    background-color: #e69500;
+}
+
+.current-address-header {
+    margin-top:-15px;
+    display: flex;
+    align-items: center;
+   margin-bottom:-12px;
+   font-weight: bolder;
+}
+
+.current-address-header i {
+    margin-right: 10px;
+    color: black;
+}
+
+#current-address {
+    margin-top: 0; /* Ensure there's no extra margin at the top */
+}
+
+/* Style the cart item box */
+.cart-item {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    width: calc(100% - 40px); /* Adjust the width of the cart item boxes */
+}
+
+/* Style the cart item */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+/* Highlight the item name */
+.cart-item-name {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* Reduce the font size of the description and add spacing */
+.cart-item-description {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Style the location info */
+.cart-item-restaurant {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #1c1a1a;
+}
+
+/* Ensure proper spacing and alignment for the item info */
+.cart-item-info {
+    flex: 2;
+}
+
+/**************************************************************************************************************/
+/* Styles for screen widths 769px to 1024px */
+/* Sidebar navigation styles */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    background-color: #ffa500; /* Match the theme color */
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar a {
+    padding: 10px ; /* Increased padding for better spacing */
+    margin-left: 0px;
+    text-decoration: none;
+    font-size: 20px; /* Reduced font size for better alignment */
+    color: #fff; /* White text color */
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.sidebar a i {
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.sidebar a:hover {
+    background-color: white; /* Slightly darker shade on hover */
+    color: #ffa500;
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px; /* Decreased font size */
+    padding: 5px; /* Adjust padding */
+    color: #fff;
+    cursor: pointer;
+}
+
+.menu-title {
+    font-size: 25px;
+    color: #fff;
+    position: absolute; /* Position it absolutely */
+    top: 20px; /* Adjust the top value to move it up */
+    margin-left:80px;
+    border-bottom: 1px solid #fff;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    font-size: 30px;
+    color: #fff;
+}
+
+nav .nav-links {
+    display: flex;
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+    .cart-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .selected-items, .right-column {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .cart-item-box {
+        width: calc(100% - 20px); /* Adjust width for item boxes */
+        margin: 10px auto; /* Center align item boxes */
+    }
+
+    .right-column {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .address-container, .price-details-container {
+        width:100%;  /* Adjust width for address, offer, and bill boxes */
+    }
+    .right-column {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        width: 100%;
+    }
+    /* Sidebar navigation styles */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    background-color: #ffa500; /* Match the theme color */
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar a {
+    padding: 10px ; /* Increased padding for better spacing */
+    margin-left: 0px;
+    text-decoration: none;
+    font-size: 20px; /* Reduced font size for better alignment */
+    color: #fff; /* White text color */
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.sidebar a i {
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.sidebar a:hover {
+    background-color: white; /* Slightly darker shade on hover */
+    color: #ffa500;
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px; /* Decreased font size */
+    padding: 5px; /* Adjust padding */
+    color: #fff;
+    cursor: pointer;
+}
+
+.menu-title {
+    font-size: 25px;
+    color: #fff;
+    position: absolute; /* Position it absolutely */
+    top: 20px; /* Adjust the top value to move it up */
+    margin-left:80px;
+    border-bottom: 1px solid #fff;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    font-size: 30px;
+    color: #fff;
+}
+
+nav .nav-links {
+    display: flex;
+}
+    
+}
+
+/* Styles for screen widths 550px to 768px */
+@media (min-width: 551px) and (max-width: 768px) {
+    .cart-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .selected-items, .right-column {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .cart-item-box {
+        width: calc(100% - 20px); /* Adjust width for item boxes */
+        margin: 10px auto; /* Center align item boxes */
+    }
+
+    .right-column {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        width: 100%;
+    }
+
+    .address-container,  .price-details-container {
+        width:100%;  /* Adjust width for address, offer, and bill boxes */
+    }
+    /* Sidebar navigation styles */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    background-color: #ffa500; /* Match the theme color */
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar a {
+    padding: 10px ; /* Increased padding for better spacing */
+    margin-left: 0px;
+    text-decoration: none;
+    font-size: 20px; /* Reduced font size for better alignment */
+    color: #fff; /* White text color */
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.sidebar a i {
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.sidebar a:hover {
+    background-color: white; /* Slightly darker shade on hover */
+    color: #ffa500;
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 10px;
+    font-size: 24px; /* Decreased font size */
+    padding: 5px; /* Adjust padding */
+    color: #fff;
+    cursor: pointer;
+}
+
+.menu-title {
+    font-size: 25px;
+    color: #fff;
+    position: absolute; /* Position it absolutely */
+    top: 20px; /* Adjust the top value to move it up */
+    margin-left:80px;
+    border-bottom: 1px solid #fff;
+}
+
+.menu-toggle {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    font-size: 30px;
+    color: #fff;
+}
+
+nav .nav-links {
+    display: flex;
+}
+}
+
+/* Styles for screen widths below 550px */
+@media (max-width: 550px) {
+    .cart-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .selected-items, .right-column {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .cart-item-box {
+        width: calc(100% - 20px); /* Adjust width for item boxes */
+        margin: 10px auto; /* Center align item boxes */
+    }
+
+    .right-column {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        width: 100%;
+    }
+
+    .address-container,  .price-details-container {
+        width:100%; /* Adjust width for address, offer, and bill boxes */
+    }
+    /* Sidebar navigation styles */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    background-color: #ffa500; /* Match the theme color */
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar a {
+    padding: 10px ; /* Increased padding for better spacing */
+    margin-left: 0px;
+    text-decoration: none;
+    font-size: 20px; /* Reduced font size for better alignment */
+    color: #fff; /* White text color */
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.sidebar a i {
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.sidebar a:hover {
+    background-color: white; /* Slightly darker shade on hover */
+    color: #ffa500;
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px; /* Decreased font size */
+    padding: 5px; /* Adjust padding */
+    color: #fff;
+    cursor: pointer;
+}
+
+.menu-title {
+    font-size: 25px;
+    color: #fff;
+    position: absolute; /* Position it absolutely */
+    top: 20px; /* Adjust the top value to move it up */
+    margin-left:80px;
+    border-bottom: 1px solid #fff;
+}
+
+.menu-toggle {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    font-size: 30px;
+    color: #fff;
+}
+
+nav .nav-links {
+    display: flex;
+}
+}
+

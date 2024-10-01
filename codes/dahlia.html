@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./dah_images/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dahlia, Chennai | Home</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="headerbar">
+                <div class="account">
+                    <ul>
+                        <a href="#"><li><i class="fa-solid fa-house-chimney"></i></li></a>
+                        <a href="#"><li><i class="fa-solid fa-magnifying-glass searchicon" id="searchicon1"></i></li></a>
+                        <div class="search" id="searchinput1">
+                            <input type="search">
+                            <i class="fa-solid fa-magnifying-glass srchicon" id="srchicon1"></i>
+                        </div>
+                        <a href="#"><li><i class="fa-solid fa-user" id="user-mb"></i></li></a>
+                    </ul>
+                </div>
+                <div class="nav">
+                    <ul>
+                        <a href="#"><li>Home</li></a>
+                        <a href="#"><li>About us</li></a>
+                        <a href="#"><li>Menu</li></a>
+                    </ul>
+                </div>
+            </div>
+            <div class="logo">
+                <img src="./dah_images/official logo wide.jpg" alt="Dahlia Logo">
+            </div>
+            <div class="bar">
+                <i class="fa-solid fa-bars" id="menu-bar"></i>
+                <i class="fa-solid fa-xmark" id="hdcross"></i>
+            </div>
+            
+            <div class="nav">
+                <ul>
+                    <a href="#"><li>Home</li></a>
+                    <a href="#"><li>About us</li></a>
+                    <a href="#"><li>Menu</li></a>
+                </ul>
+            </div>
+            <div class="account">
+                <ul>
+                    <a href="#"><li><i class="fa-solid fa-house-chimney"></i></li></a>
+                    <a href="#"><li><i class="fa-solid fa-magnifying-glass searchicon" id="searchicon2"></i></li></a>
+                    <div class="search" id="searchinput2">
+                        <input type="search">
+                        <i class="fa-solid fa-magnifying-glass srchicon"></i>
+                    </div>
+                    <a href="#"><li><i class="fa-solid fa-user" id="user-lap"></i></li></a>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="home">
+        <div class="main_slide">
+            <div>
+                <h1>Experience <span>Culinary Excellence </span> at <span> Dahlia</span></h1>
+                <p>Discover Dahlia Restaurant in Chennai, where exquisite flavors meet elegant ambiance. Indulge in our curated menu of culinary delights, crafted to perfection for an unforgettable dining experience.</p>
+            </div>
+            <div>
+                <img src="./dah_images/full food.jpg" alt="">
+            </div>
+        </div>
+        <div class="food_items">
+            <div class="item">
+                <div>
+                    <img src="./dah_images/seafood.jpg" alt="">
+                </div>
+                <h1>A good start with our <span>Signature Seafood Platter - ₹1499</span></h1>
+                <p>Click "See more" to "Know more" ;)</p>
+                <button class="white_btn" onclick="location.href='seafood.html'">See More</button>
+                <button class="add_to_cart_btn" onclick="addToCart('Signature Seafood Platter', 1499, './dah_images/seafood.jpg', 'A good start with our Signature Seafood Platter', 'Dahlia', 'Chennai, Tamil Nadu')">Add to Cart</button>
+                <button class="like-btn"><i class="fa-regular fa-heart"></i></button>
+            </div>
+            <div class="item">
+                <div>
+                    <img src="./dah_images/chicken.jpg" alt="">
+                </div>
+                <h1>Your favourite <span>Spicy Chicken Fiesta @₹999</span></h1>
+                <p>Click "See more" to "Know more" ;)</p>
+                <button class="white_btn" onclick="location.href='chicken.html'">See More</button>
+                <button class="add_to_cart_btn" onclick="addToCart('Spicy Chicken Fiesta', 999, './dah_images/chicken.jpg', 'Your favourite Spicy Chicken Fiesta', 'Dahlia', 'Chennai, Tamil Nadu')">Add to Cart</button>
+                <button class="like-btn"><i class="fa-regular fa-heart"></i></button>
+            </div>
+            <div class="item">
+                <div>
+                    <img src="./dah_images/veg.jpg" alt="">
+                </div>
+                <h1>The ShowStopper <span>Veggie Delight Medley - ₹799</span></h1>
+                <p>Click "See more" to "Know more" ;)</p>
+                <button class="white_btn" onclick="location.href='veg.html'">See More</button>
+                <button class="add_to_cart_btn" onclick="addToCart('Veggie Delight Medley', 799, './dah_images/veg.jpg', 'The ShowStopper Veggie Delight Medley', 'Dahlia', 'Chennai, Tamil Nadu')">Add to Cart</button>
+                <button class="like-btn"><i class="fa-regular fa-heart"></i></button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <script src="add_to_cart.js"></script>
+</body>
+</html>

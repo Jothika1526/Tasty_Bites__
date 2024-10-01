@@ -1,0 +1,911 @@
+/* Ensure the body and overall styles */
+body {
+    margin: 0;
+    padding-top: 80px;
+    background-color: white;
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Header styles */
+header {
+    background-color: #ffa500;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it stays above other elements */
+    box-shadow: 0 8px 16px rgba(230, 104, 104, 0.4); /* Stronger shadow effect */
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo {
+    flex-shrink: 0;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav .nav-links li {
+    margin-left: 20px;
+}
+
+nav .nav-links li.location-dropdown {
+    margin-left: 0;
+}
+
+.dropdown-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 10px 15px;
+    border: 2px solid #ffa500;
+    border-radius: 5px;
+    position: relative;
+    margin-right: 10px;
+}
+
+.dropdown-wrapper i {
+    color: #ffa500;
+    margin-right: 10px;
+}
+
+nav .nav-links li.location-dropdown select {
+    width: 150px;
+    height: 30px;
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+    color: #333;
+    font-weight: bold;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23ffa500" d="M0 0L2 2L4 0z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+}
+
+nav .nav-links li.location-dropdown select option {
+    background-color: white;
+    color: black;
+    padding: 10px;
+}
+
+nav .nav-links li.location-dropdown select:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+nav .nav-links li.location-dropdown select option:checked {
+    background-color: #ffa500;
+    color: white;
+}
+
+nav .nav-links li.location-dropdown select option:hover {
+    background-color: #ff7f00;
+}
+
+nav .nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+/* Active link styles */
+nav .nav-links li a.active,
+nav .nav-links li a:hover {
+    background-color: white;
+    color: #ffa500;
+    border-radius: 5px;
+}
+
+.nav-links li a i {
+    margin-right: 5px;
+}
+
+/* Dishes section styles */
+section.dishes {
+    padding: 20px;
+}
+
+.dishes-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.dishes-container::-webkit-scrollbar {
+    display: none;
+}
+
+.dish {
+    flex: 0 0 auto;
+    width: 150px;
+    margin: 20px;
+    text-align: center;
+    transition: transform 0.3s, border 0.3s, box-shadow 0.3s;
+    border: 2.5px solid transparent;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    background-color: white;
+    overflow: hidden;
+}
+
+.dish img {
+    border-radius: 15px;
+    height:150px;
+    width:150px;
+}
+
+.dish:hover {
+    transform: scale(1.1);
+    border-color: #ffa500;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dish p {
+    color: black;
+    transition: color 0.3s;
+}
+
+.dish:hover p {
+    color: #ffa500;
+}
+
+/* Restaurants section styles */
+section.restaurants {
+    padding: 20px;
+}
+
+.restaurants-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.restaurant {
+    position: relative;
+    box-sizing: border-box;
+    margin: 20px 0;
+    text-align: left;
+    transition: transform 0.3s, border 0.3s, box-shadow 0.3s;
+    border: 2.5px solid wheat;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    background-color: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.offer-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ff0000;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.restaurant img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.restaurant:hover {
+    transform: scale(1.05);
+    border-color: #ffa500;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    background-color: hsl(39, 71%, 85%);
+}
+
+.restaurant-info {
+    text-align: left;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rating-time {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.rating-time .rating-container {
+    display: flex;
+    align-items: center;
+}
+
+.rating-time i {
+    color: #ffa500;
+    margin-right: 5px;
+}
+
+.rating {
+    font-weight: bold;
+    color: #333;
+    padding: 2px 6px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.time {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 5px;
+}
+
+.restaurant-link {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.restaurant-link * {
+    color: inherit;
+    text-decoration: none;
+}
+
+.dishes-container a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.restaurants a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Sort dropdown styles */
+.sort-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content label {
+    display: block;
+    padding: 10px;
+}
+
+.dropdown-content label:hover {
+    background-color: #ddd;
+}
+
+.sort-dropdown button i {
+    margin-left: 5px;
+}
+
+.sort-dropdown input[type="radio"] {
+    accent-color: orange;
+}
+
+.sort-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Filters styles */
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-button {
+    padding: 10px 20px;
+    border: 2px solid #ffa500;
+    border-radius: 20px;
+    background-color: white;
+    color: #ffa500;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    position: relative;
+    z-index: 2;
+}
+
+.filter-button:hover {
+    background-color: #ffa500;
+    color: white;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 100px;
+}
+
+.footer-column {
+    flex: 1 1 200px;
+    margin: 20px 0;
+}
+
+.footer-column h3 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.footer-column p, .footer-column ul {
+    margin: 5px 0;
+    line-height: 1.6; /* Increase line height for better spacing */
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin: 5px 0;
+}
+
+.footer-column ul li a {
+    color: #ffa500;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #fff;
+}
+
+.footer-column p i {
+    margin-right: 10px;
+}
+
+.smhead {
+    padding-left: 60px;
+}
+
+.social-links li {
+    padding-left: 60px;
+}
+
+.social-links li a {
+    display: flex;
+    align-items: center;
+    color: #ffa500;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-links li a:hover {
+    color: #fff;
+}
+
+.social-links li a i {
+    margin-right: 5px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #222;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Top restaurants styles */
+.top-restaurants {
+    margin-left: 40px; /* Adjusted to push the section to the right */
+}
+
+.top-restaurants-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 20px 0;
+    gap: 10px;
+}
+
+.top-restaurants-container::-webkit-scrollbar {
+    display: none;
+}
+
+.top-restaurants-container .restaurant {
+    flex: 0 0 auto;
+    width: 250px;
+    margin-right: 10px;
+    border: 2.5px solid wheat;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s, border 0.3s, box-shadow 0.3s;
+}
+
+.top-restaurants-container .restaurant img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.top-restaurants-container .restaurant-info {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-restaurants-container .restaurant:hover {
+    transform: scale(0.95); /* Pop in effect */
+    border-color: #ffa500;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    background-color: hsl(39, 71%, 85%);
+}
+
+.offer-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ff0000;
+    color: white; /* Changed text color to white */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.dishes h2,
+.restaurants h2,
+.top-restaurants h2 {
+    font-family: 'Lobster', cursive;
+    font-size: 2.5em; /* Adjust the size as needed */
+    color: black; /* Adjust the color as needed */
+    text-align: center; /* Center align the text */
+    margin-bottom: 20px; /* Add some space below the heading */
+}
+
+.restaurant-name {
+    font-weight: bolder;
+}
+
+.dish-list {
+    color: rgb(100, 98, 98);
+}
+
+/* Active filter button styles */
+.filter-button.active {
+    background-color: #ffa500;
+    color: white;
+}
+/*********************************************************************************************************************/
+ /* Add to your existing CSS */
+
+/* Sidebar navigation styles */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    background-color: #ffa500; /* Match the theme color */
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar a {
+    padding: 10px ; /* Increased padding for better spacing */
+    margin-left: 0px;
+    text-decoration: none;
+    font-size: 20px; /* Reduced font size for better alignment */
+    color: #fff; /* White text color */
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.sidebar a i {
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.sidebar a:hover {
+    background-color: white; /* Slightly darker shade on hover */
+    color: #ffa500;
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px; /* Decreased font size */
+    padding: 5px; /* Adjust padding */
+    color: #fff;
+    cursor: pointer;
+}
+
+.menu-title {
+    font-size: 25px;
+    color: #fff;
+    position: absolute; /* Position it absolutely */
+    top: 20px; /* Adjust the top value to move it up */
+    margin-left:80px;
+    border-bottom: 1px solid #fff;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    font-size: 30px;
+    color: #fff;
+}
+
+nav .nav-links {
+    display: flex;
+}
+
+/* Location dropdowns in top navigation bar */
+
+@media (max-width: 550px) {
+    .restaurants-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav .nav-links li {
+        display: none;
+    }
+
+    nav .nav-links .location-dropdown {
+        display: block;
+        margin: 0 auto;
+        width: 200px;
+    }
+
+    .sidebar {
+        width: 0;
+    }
+
+    .sidebar.open {
+        width: 250px;
+    }
+
+    .sidebar .location-dropdown {
+        display: none;
+    }
+
+    .filters {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .filter-button {
+        padding: 10px 15px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .restaurants-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Two columns */
+        gap: 20px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-left: 0; /* Remove the left padding */
+    }
+
+    .footer-column {
+        margin: 10px 0;
+        width: 100%; /* Make columns full width */
+    }
+
+    .footer-column h3 {
+        font-size: 1.2rem;
+    }
+
+    .footer-column ul li {
+        margin: 10px 0;
+    }
+
+    .footer-column ul li a {
+        font-size: 1rem;
+    }
+
+    .smhead {
+        padding-left: 0; /* Remove the left padding */
+        margin-top: 20px; /* Add margin-top for spacing */
+    }
+
+    .social-links {
+        padding-left: 0; /* Remove the left padding */
+    }
+
+    .social-links li {
+        padding-left: 0; /* Remove the left padding */
+    }
+
+    .social-links li a {
+        justify-content: center; /* Center the social links */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav .nav-links li {
+        display: none;
+    }
+
+    nav .nav-links .location-dropdown {
+        display: block;
+        margin: 0 auto;
+        width: 200px;
+    }
+
+    .sidebar {
+        width: 0;
+    }
+
+    .sidebar.open {
+        width: 250px;
+    }
+
+    .sidebar .location-dropdown {
+        display: none;
+    }
+
+    .filters {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .filter-button {
+        padding: 10px 15px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .restaurants-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Two columns */
+        gap: 20px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-left: 0; /* Remove the left padding */
+    }
+
+    .footer-column {
+        margin: 10px 0;
+        width: 100%; /* Make columns full width */
+    }
+
+    .footer-column h3 {
+        font-size: 1.2rem;
+    }
+
+    .footer-column ul li {
+        margin: 10px 0;
+    }
+
+    .footer-column ul li a {
+        font-size: 1rem;
+    }
+
+    .smhead {
+        padding-left: 0; /* Remove the left padding */
+        margin-top: 20px; /* Add margin-top for spacing */
+    }
+
+    .social-links {
+        padding-left: 0; /* Remove the left padding */
+    }
+
+    .social-links li {
+        padding-left: 0; /* Remove the left padding */
+    }
+
+    .social-links li a {
+        justify-content: center; /* Center the social links */
+    }
+}
+
+/* Media query for screens between 769px and 1024px (3 items per row) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .restaurants-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Three columns */
+        gap: 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav .nav-links li {
+        display: none;
+    }
+
+    nav .nav-links .location-dropdown {
+        display: block;
+        margin: 0 auto;
+        width: 200px;
+    }
+
+    .sidebar {
+        width: 0;
+    }
+
+    .sidebar.open {
+        width: 250px;
+    }
+
+    .sidebar .location-dropdown {
+        display: none;
+    }
+
+    .filters {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .filter-button {
+        padding: 10px 15px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-left: 0; /* Remove the left padding */
+    }
+
+    .footer-column {
+        margin: 10px 0;
+        width: 100%; /* Make columns full width */
+    }
+
+    .footer-column h3 {
+        font-size: 1.2rem;
+    }
+
+    .footer-column ul li {
+        margin: 10px 0;
+    }
+
+    .footer-column ul li a {
+        font-size: 1rem;
+    }
+
+    .smhead {
+        padding-left: 0; /* Remove the left padding */
+        margin-top: 20px; /* Add margin-top for spacing */
+    }
+
+    .social-links {
+        padding-left: 0; /* Remove the left padding */
+    }
+
+    .social-links li {
+        padding-left: 0; /* Remove the left padding */
+    }
+
+    .social-links li a {
+        justify-content: center; /* Center the social links */
+    }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Address</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="signup_3.css">
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        <form id="signup-address-form">
+            <div class="input-group">
+                <label for="state" class="select-label">State</label>
+                <select id="state" class="select-field">
+                    <option value="" disabled selected>Select State</option>
+                    <option value="tamilnadu">Tamil Nadu</option>
+                </select>
+                <span id="state-error" class="error-message"></span>
+            </div>
+            <div class="input-group">
+                <label for="city" class="select-label">City</label>
+                <select id="city" class="select-field disabled" disabled>
+                    <option value="" disabled selected>Select City</option>
+                </select>
+                <span id="city-error" class="error-message"></span>
+            </div>
+            <div class="input-group">
+                <label for="locality" class="select-label">Locality</label>
+                <select id="locality" class="select-field disabled" disabled>
+                    <option value="" disabled selected>Select Locality</option>
+                </select>
+                <span id="locality-error" class="error-message"></span>
+            </div>
+            <div class="input-group">
+                <input type="text" id="address" class="input-field" placeholder=" " required autocomplete="off">
+                <label for="address" class="input-label">Address</label>
+                <span id="address-error" class="error-message"></span>
+            </div>
+            <div class="input-group">
+                <input type="text" id="pincode" class="input-field" placeholder=" " required autocomplete="off">
+                <label for="pincode" class="input-label">Pincode</label>
+                <span id="pincode-error" class="error-message"></span>
+            </div>
+            <button type="button" id="next-button">Next</button>
+        </form>
+    </div>
+    <script src="signup_3.js"></script>
+</body>
+</html>

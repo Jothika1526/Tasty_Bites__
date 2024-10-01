@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png.jpg" alt="Logo">
+            </div>
+            <nav>
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li class="location-dropdown">
+                        <div class="dropdown-wrapper">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <select id="location" name="location">
+                                <option value="coimbatore">Coimbatore</option>
+                                <option value="chennai">Chennai</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="location-dropdown">
+                        <div class="dropdown-wrapper">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <select id="area" name="area">
+                                <option value="RS Puram" selected>RS Puram</option>
+                                <option value="Kalapatti">Kalapatti</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li><a href="coimbatore_RS Puram.html" ><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="search.html"><i class="fas fa-search"></i> Search</a></li>
+                   
+                    <li><a href="cart.html" class="active"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+                    <li><a href="profile.html"><i class="fas fa-user"></i>Profile</a></li>
+                    <span></span>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div id="mySidebar" class="sidebar">
+        <span class="menu-title">Menu</span>
+        <a href="javascript:void(0)" class="closebtn" id="closeBtn">&times;</a>
+        <a href="coimbatore_RS Puram.html"><i class="fas fa-home"></i> Home</a>
+        <a href="search.html"><i class="fas fa-search"></i> Search</a>
+        <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a>
+        <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+    </div>
+    
+
+    <main>
+        <div class="cart-container">
+            <div class="selected-items">
+                <h2 style="font-size: 15px; margin-bottom: 20px;";>Items you have selected</h2>
+                <div id="cart-items"></div>
+            </div>
+            <div class="right-column">
+                <div class="section">
+                    <h3>Pickup/Dine-in Address</h3>
+                    <div class="address-container">
+                        <div id="current-address-container">
+                            <div class="current-address-header">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Current Address</p>
+                            </div>
+                            <p id="current-address">C/24, MR Wisdom and Blossom Apartments, <br> RS puram, <br> Coimbatore - 641112
+                                <br> Tamilnadu <br> </p>
+                            <button id="change-address" class="button">Change</button>
+                        </div>
+                        <div id="change-address-form" style="display: none;">
+                            <form id="change-address-details-form">
+                                <div class="input-group">
+                                    <label for="state" class="select-label">State</label>
+                                    <select id="state" class="select-field">
+                                        <option value="" disabled selected>Select State</option>
+                                        <option value="tamilnadu">Tamil Nadu</option>
+                                        
+                                    </select>
+                                    <span id="state-error" class="error-message"></span>
+                                </div>
+                                <div class="input-group">
+                                    <label for="city" class="select-label">City</label>
+                                    <select id="city" class="select-field disabled" disabled>
+                                        <option value="" disabled selected>Select City</option>
+                                    </select>
+                                    <span id="city-error" class="error-message"></span>
+                                </div>
+                                <div class="input-group">
+                                    <label for="locality" class="select-label">Locality</label>
+                                    <select id="locality" class="select-field disabled" disabled>
+                                        <option value="" disabled selected>Select Locality</option>
+                                    </select>
+                                    <span id="locality-error" class="error-message"></span>
+                                </div>
+                                <div class="input-group">
+                                    <input type="text" id="address" class="input-field" placeholder=" " required autocomplete="off">
+                                    <label for="address" class="input-label">Address</label>
+                                    <span id="address-error" class="error-message"></span>
+                                </div>
+                                <div class="input-group">
+                                    <input type="text" id="pincode" class="input-field" placeholder=" " required autocomplete="off">
+                                    <label for="pincode" class="input-label">Pincode</label>
+                                    <span id="pincode-error" class="error-message"></span>
+                                </div>
+                                <button type="button" id="apply-changes" class="button">Apply Changes</button>
+                                <p id="error-message" class="error-message">Please fill out all fields correctly.</p>
+                            </form>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>Price Details</h3>
+                    <div class="price-details-container">
+                        <p>Sub Total: <span class="price-detail" id="sub-total">Rs. 0.00</span></p>
+                        <p>Discount: <span class="price-detail">Rs. 0.00</span></p>
+                        <p>Taxes and Charges: <span class="price-detail" id="taxes-charges">Rs. 0.00</span></p>
+                        <p class="grand-total">Grand Total: <span class="price-detail" id="grand-total">Rs. 0.00</span></p>
+                        <button class="button" id="place-order-btn">Place Order</button>
+                        <p id="cart-error-message" class="error-message">Your cart is empty. Please add items to place an order.</p>
+                    </div>    
+                </div>                        
+            </div>
+        </div>
+        <input type="hidden" id="user-address" value="">
+    </main>
+    <script src="cart.js"></script>
+</body>
+</html>
